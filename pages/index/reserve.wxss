@@ -1,0 +1,46 @@
+/* pages/index/reserve.wxss */
+.reserve-area{
+  padding:10rpx 0;
+}
+.reserve-item{
+  position:relative;
+  padding:10rpx 0 10rpx 150rpx;
+  line-height:40rpx;
+}
+.item-left{
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:20rpx;
+  color:#666;
+  height:40rpx;
+  margin:auto;
+}
+.station-item{
+  margin-right:25rpx;
+  margin-bottom:25rpx;
+  display:inline-block;
+  font-size:24rpx;
+  border:1px solid #666;
+  color:#666;
+  width:auto;
+  padding:12rpx 20rpx;
+  border-radius:10rpx;
+}
+.station-item.active{
+  color:#fff;
+  border:1px solid #5eb95e;
+  background:#5eb95e;
+}
+.station-list{
+  border-top:1px solid #5eb95e;
+  margin-top:10rpx;
+}
+.item-right{
+  padding:10rpx 18rpx;
+}
+.station-head{
+  
+  line-height:80rpx;
+  text-align:center;
+}

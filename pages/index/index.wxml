@@ -1,0 +1,127 @@
+<!--index.wxml-->
+<view class="container">
+
+<view class="change-date common-color" bindtap="changeDate">
+{{year}}年{{month}}月{{day}}号
+<image class="change-img" src="/images/icons/change.png" ></image>
+</view>
+
+<calendar 
+   weeks-type="cn"
+   days-color="{{dayStyle}}"
+   binddayClick="dayClick"
+   wx:if="{{dateshow}}"
+   />
+<view class="reserve-wrap">
+
+  <view class="no-content" wx:if="{{empty}}">
+    <image class="no-content-img" src="/images/icons/no_content.png" mode="widthFix"></image>
+    <view class="no-content-text">小主人，没找到当日的班车哦~</view>
+  </view>
+
+  <view class="reserve-list">
+    <view class="reserve-item">
+      <text class="item-left">发车时间</text>
+      <view class="item-right common-color">09:00</view>
+    </view>
+    <view class="reserve-item">
+      <text class="item-left">班车路线</text>
+      <view class="item-right lines-limit">大学城到火车站</view>
+    </view>
+    <view class="reserve-item">
+      <text class="item-left">经过站点</text>
+      <view class="item-right">
+      <text class="station-item">大学城站</text>
+      <text class="station-item">大学城站</text>
+      <text class="station-item">大学城站</text>
+      <text class="station-item">大学城站</text>
+      <text class="station-item">大学城站</text>
+      <text class="station-item">大学城站</text>
+      <text class="station-item">大学城站</text>
+      <text class="station-item">大学城站</text>
+      <text class="station-item">大学城站</text>
+      <text class="station-item">大学城站</text>
+      <text class="station-item">大学城站</text>
+      <text class="station-item">大学城站</text>
+      <text class="station-item">大学城站</text>
+      <text class="station-item">大学城站</text>
+
+      </view>
+    </view>
+    <view class="reserve-go" bindtap="goReserve" data-id="">
+      <image src="/images/icons/arrow_r.png" class="right-icon"></image>
+    </view>
+  </view>
+
+  <view class="reserve-list">
+    <view class="reserve-item">
+      <text class="item-left">发车时间</text>
+      <view class="item-right common-color">09:00</view>
+    </view>
+    <view class="reserve-item">
+      <text class="item-left">班车路线</text>
+      <view class="item-right lines-limit">大学城到火车站</view>
+    </view>
+    <view class="reserve-item">
+      <text class="item-left">经过站点</text>
+      <view class="item-right">
+      <text class="station-item">大学城站</text>
+      <text class="station-item">大学城站</text>
+      <text class="station-item">大学城站</text>
+      <text class="station-item">大学城站</text>
+      <text class="station-item">大学城站</text>
+      <text class="station-item">大学城站</text>
+      <text class="station-item">大学城站</text>
+      <text class="station-item">大学城站</text>
+      <text class="station-item">大学城站</text>
+      <text class="station-item">大学城站</text>
+      <text class="station-item">大学城站</text>
+      <text class="station-item">大学城站</text>
+      <text class="station-item">大学城站</text>
+      <text class="station-item">大学城站</text>
+
+      </view>
+    </view>
+    <view class="reserve-go">
+      <image src="/images/icons/arrow_r.png" class="right-icon"></image>
+    </view>
+  </view>
+
+  <view class="reserve-list">
+    <view class="reserve-item">
+      <text class="item-left">发车时间</text>
+      <view class="item-right common-color">09:00</view>
+    </view>
+    <view class="reserve-item">
+      <text class="item-left">班车路线</text>
+      <view class="item-right lines-limit">大学城到火车站</view>
+    </view>
+    <view class="reserve-item">
+      <text class="item-left">经过站点</text>
+      <view class="item-right">
+      <text class="station-item">大学城站</text>
+      <text class="station-item">大学城站</text>
+      <text class="station-item">大学城站</text>
+      <text class="station-item">大学城站</text>
+      <text class="station-item">大学城站</text>
+      <text class="station-item">大学城站</text>
+      <text class="station-item">大学城站</text>
+      <text class="station-item">大学城站</text>
+      <text class="station-item">大学城站</text>
+      <text class="station-item">大学城站</text>
+      <text class="station-item">大学城站</text>
+      <text class="station-item">大学城站</text>
+      <text class="station-item">大学城站</text>
+      <text class="station-item">大学城站</text>
+
+      </view>
+    </view>
+    <view class="reserve-go" bindtap="goReserve" data-id="">
+      <image src="/images/icons/arrow_r.png" class="right-icon"></image>
+    </view>
+  </view>
+
+</view>
+
+
+</view>

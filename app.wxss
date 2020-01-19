@@ -1,0 +1,167 @@
+/**app.wxss**/
+
+input,view{
+  box-sizing: border-box;
+  width:100%;
+  font-size:26rpx;
+}
+text{
+  box-sizing:border-box;
+}
+image{
+  width:100%;
+  display: block;
+}
+.cf{
+  clear:both;
+}
+.m-l-5{
+  margin-left:10rpx;
+}
+.m-l-10{
+  margin-left:20rpx;
+}
+.m-b-7{
+  margin-bottom:14rpx;
+}
+.m-b-50{
+  margin-bottom:100rpx;
+}
+.blod{
+  font-weight: 700;
+}
+.sm-tx{
+  font-size: 24rpx;
+}
+.cm-tx{
+  font-size:26rpx;
+}
+.lg-tx{
+  font-size: 28rpx;
+}
+.llg-tx{
+  font-size:32rpx;
+}
+.bg-white{
+  background: #fff;
+}
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+}
+.lb-width{
+  width:95%;
+}
+.display-flex{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.common-color{
+  color:#5eb95e;
+}
+.common-bg{
+  background-color: #5eb95e;
+}
+.line-limit{
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.lines-limit{
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  white-space: normal !important;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.grey-color{
+  color:#666;
+}
+.icon-cate{
+  position:absolute;
+  width:100rpx;
+  height:100rpx;
+  left:0;
+  top:0;
+  z-index:999;
+}
+.no-margin{
+  margin-right:0 !important;
+}
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.bottom-nav{
+  position:fixed;
+  height:100rpx;
+  bottom:0;
+  left:0;
+  background:#5eb95e;
+  text-align:center;
+  z-index:999;
+  color:#fff;
+  line-height:100rpx;
+}
+.line-shadow{
+  border-bottom: 1px solid #e3eaef;
+  box-shadow: 0 1px 2px 0 rgba(101,129,156,.08);
+}
+.line-shadow-top{
+  border-top: 1px solid #e3eaef;
+  box-shadow: 0 1px 2px 0 rgba(101,129,156,.08);
+}
+/* 空空如也 */
+.no-content-img{
+  width:250rpx;
+  margin:50rpx auto 0rpx;
+}
+.no-content-text{
+  color:#666;
+  text-align:center;
+}
+/* 弹框 */
+.shadow-box{
+  position:fixed;
+  top:0;
+  bottom:0;
+  left:0;
+  margin:auto;
+  right:0;
+  background:rgba(50, 50, 50, 0.8);
+  z-index:999999;
+}
+.model-box{
+  position:absolute;
+  width:70%;
+  margin:auto;
+  left:0;
+  right:0;
+  height:300rpx;
+  top:0;
+  bottom:0;
+  background:#fff;
+  border-radius:25rpx;
+}
+.model-text{
+  height:200rpx;
+  padding:60rpx 15rpx;
+  line-height:40rpx;
+}
+.model-btn{
+  height:100rpx;
+  line-height:100rpx;
+  text-align:center;
+  font-size:30rpx;
+}

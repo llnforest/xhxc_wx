@@ -1,0 +1,82 @@
+/**index.wxss**/
+page{
+  background:#efefef;
+}
+.change-img{
+  width:40rpx;
+  height:40rpx;
+  display: inline-block;
+  position: relative;
+  top: 9rpx;
+
+}
+calendar{
+  width: 80%;
+  position: fixed;
+  z-index: 99999;
+  background: #fff;
+  top: 90rpx;
+  padding: 30rpx 10%;
+  height:100%;
+}
+.change-date{
+  text-align:center;
+  font-weight: 700;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom: 1px solid #5eb95e;
+  background:rgba(255,255,255,0.8);
+  position:fixed;
+  top:0;
+}
+
+.reserve-wrap{
+  margin-top:80rpx;
+  
+  
+}
+.reserve-list{
+  margin-bottom:16rpx;
+  padding: 10rpx 60rpx 10rpx 0;
+  position:relative;
+  background-color:#fff;
+}
+.reserve-item{
+  position:relative;
+  padding:5rpx 0 5rpx 150rpx;
+  line-height:40rpx;
+}
+.item-left{
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:20rpx;
+  color:#666;
+  height:40rpx;
+  margin:auto;
+}
+.station-item{
+  margin-right:15rpx;
+  margin-bottom:12rpx;
+  font-size:24rpx;
+}
+.reserve-go{
+  position:absolute;
+  right:0;
+  width:60rpx;
+  top:0;
+  bottom:0;
+  height:100rpx;
+  margin:auto;
+}
+.right-icon{
+  height: 50rpx;
+  width: 40rpx;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+
+}
