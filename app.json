@@ -1,9 +1,10 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/index/reserve",
-    
-    "pages/user/user"
+    "pages/user/login",
+    "pages/user/user",
+    "pages/user/myreserve",
+    "pages/index/reserve"
     
   ],
   "window": {

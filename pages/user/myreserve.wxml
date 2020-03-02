@@ -1,0 +1,27 @@
+<!--pages/user/myreserve.wxml-->
+<view class="reserve-wrap">
+
+  <view class="no-content" wx:if="{{empty}}">
+    <image class="no-content-img" src="/images/icons/no_content.png" mode="widthFix"></image>
+    <view class="no-content-text">小主人，没找到当日的班车哦~</view>
+  </view>
+
+  <view class="reserve-list" wx:for="{{reserveList}}" wx:key="id">
+    <view class="reserve-item">
+      <text class="item-left">预约信息</text>
+      <view class="item-right common-color">{{item.reserve_date}} {{item.start_time}}</view>
+      <view class="item-right sm-tx"> ({{item.station_name}})</view>
+    </view>
+    <view class="reserve-item">
+      <text class="item-left">班车班次</text>
+      <view class="item-right common-color">{{item.bus_num}}</view>
+      <view class="item-right sm-tx"> {{item.line_name}}</view>
+    </view>
+    <view class="reserve-item">
+      <text class="item-left">联系方式</text>
+      <view class="item-right common-color" data-phone="{{item.driver_phone}}" bindtap="callPhone">{{item.driver_phone}}</view>
+      <view class="item-right sm-tx"> {{item.driver_name}}</view>
+    </view>
+  </view>
+
+</view>

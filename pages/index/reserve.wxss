@@ -38,6 +38,7 @@
 }
 .item-right{
   padding:10rpx 18rpx;
+  height: 60rpx;
 }
 .station-head{
   

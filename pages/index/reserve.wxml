@@ -2,44 +2,32 @@
   <view class="reserve-area">
     <view class="reserve-item">
       <text class="item-left">发车时间</text>
-      <view class="item-right common-color">09:00</view>
+      <view class="item-right common-color">{{reserve_date}} {{busInfo.start_time}}</view>
     </view>
     <view class="reserve-item">
       <text class="item-left">班车路线</text>
-      <view class="item-right lines-limit">大学城到火车站</view>
+      <view class="item-right lines-limit">{{busInfo.line_name}}</view>
     </view>
     <view class="reserve-item">
       <text class="item-left">车牌号码</text>
-      <view class="item-right lines-limit">苏AE9832</view>
+      <view class="item-right lines-limit">{{busInfo.bus_num}}</view>
     </view>
     <view class="reserve-item">
       <text class="item-left">司机师傅</text>
-      <view class="item-right lines-limit">钟师傅</view>
+      <view class="item-right lines-limit">{{busInfo.driver_name}}</view>
     </view>
     <view class="reserve-item">
       <text class="item-left">师傅电话</text>
-      <view class="item-right lines-limit">13982932122</view>
+      <view class="item-right lines-limit" bindtap="callPhone" data-phone="{{busInfo.driver_phone}}">{{busInfo.driver_phone}}</view>
     </view>
   </view>
 
     <view class="station-list">
       <view class="station-head common-color">选择站点</view>
       <view class="item-right clearfix">
-        <view class="station-item">大学城站</view>
-        <view class="station-item">大学城站</view>
-        <view class="station-item">大学城站</view>
-        <view class="station-item">大学城站</view>
-        <view class="station-item">大学城站</view>
-        <view class="station-item">大学城站</view>
-        <view class="station-item">大学城站</view>
-        <view class="station-item">大学城站</view>
-        <view class="station-item">大学城站</view>
-        <view class="station-item">大学城站</view>
-        <view class="station-item">大学城站</view>
-        <view class="station-item">大学城站</view>
-        <view class="station-item">大学城站</view>
-        <view class="station-item">大学城站</view>
+        <view class="station-item {{item.id == station_id?'active':''}}" wx:for="{{stationList}}" wx:key="id" bindtap="clickStation" data-id="{{item.id}}">{{item.station_name}}</view>
+        
 
       </view>
     </view>
-    <view class="bottom-nav">立即预约</view>
+    <view class="bottom-nav" bindtap="sureSubmit">立即预约</view>

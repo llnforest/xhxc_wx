@@ -1,0 +1,21 @@
+<!--pages/user/login.wxml-->
+<image class="logo-img" src="/images/icons/logo.png"  mode="widthFix"></image>
+<view class="order-wrap bg-white m-b-7">
+    
+    <view class="order-item">
+      <view class="item-name">手机号</view>
+      <input type="number" class="item-dec" placeholder="请填写手机号" value="{{phone}}" bindinput="phoneinput">
+      </input>
+    </view>
+    <view class="order-item">
+      <view class="item-name">验证码</view>
+      <input type="number" class="item-dec short-input" placeholder="请填写验证码" bindconfirm="sureSubmit" bindinput="codeinput">
+      
+      </input>
+      <view class="send-code common-bg" bindtap="sendCode" wx:if="{{sec == 0}}">发送验证码</view>
+      <view class="send-code unable-bg" wx:else>{{sec}}s后重新发送</view>
+
+    </view>
+  </view>
+<view class="bottom-nav llg-tx" bindtap="sureSubmit">立即登录</view>
+

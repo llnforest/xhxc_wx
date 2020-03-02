@@ -1,8 +1,10 @@
 //app.js
 App({
   data:{
-    url:'http://api.99wukong.test/',
-    // url:'http://192.168.100.62/wkmp/public/index/'
+    url:'https://wxapi2.xihaxueche.com/',
+
+    // url:'http://192.168.100.62/php/api2/public/'
+    isCanClick:true,
   },
   /**
    * 
@@ -11,8 +13,11 @@ App({
    * sucFunc:成功回调函数
    * is_toast:操作成功是否弹框
    */
-  requestFunc: function(url,data,sucFunc,is_suc_toast = false,errFunc = false){
+  requestFunc: function(url,data = {},sucFunc,is_suc_toast = false,errFunc = false){
     var that = this;
+    if(!that.data.isCanClick) return false;
+    that.data.isCanClick = false;
+    data.token = that.globalData.token;
     wx.request({
       url: that.data.url + url,
       method: 'post',
@@ -21,38 +26,66 @@ App({
         'Content-Type': 'application/x-www-form-urlencoded'
       },
       success: function (res) {
-        
         var _data = res.data;
         console.log(_data);
-        if (res.data.code == 0) {
+        if (res.data.code == 200) {
           if(is_suc_toast){
-            wx.showToast({
-              title: _data.msg,
-              duration: 3000,
-              icon: 'none',
-            });
+            that.toast(_data.msg);
           }
           sucFunc(_data);
-          
         } else {
           if(errFunc){
             errFunc(_data);
           }else{
-            wx.showToast({
-              title: _data.msg,
-              duration: 2000,
-              icon: 'none',
-            });
-          }
-          
+            that.toast(_data.msg);
+          }   
         }
       },
       fail: function (e) {
-        wx.showToast({
-          title: '网络异常！',
-          duration: 2000
-        });
+        that.toast('网络异常！');
       },
+      complete:function(){
+        that.data.isCanClick = true;
+      }
+    });
+  },
+  toast: function (msg, timelong = 2000) {
+    let duration = timelong || 2000;
+    wx.showToast({
+      title: msg,
+      duration: duration,
+      icon: 'none'
+    });
+  },
+  //自动登录
+  userLogin: function () {
+    //定义promise方法
+    var that = this;
+    console.log(4);
+    return new Promise(function (resolve, reject) {
+      wx.login({
+        success: res => {
+          console.log(res);
+          // 发送 res.code 到后台换取 openId, sessionKey, unionId
+          wx.request({
+            url: that.data.url + 'v4/wx/gettoken',
+            method: 'post',
+            'data': { code: res.code },
+            header: {
+              'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            success: function (res) {
+              if (res.data.code == 200) {
+                that.globalData.token = res.data.data.token;
+                that.globalData.openid = res.data.data.openid;
+                resolve(res.data);
+              }else{
+                reject('error');
+              }
+            }
+          });
+        }
+      });
     });
   },
   onLaunch: function () {
@@ -60,13 +93,9 @@ App({
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
+    var that = this;
 
-    // 登录
-    wx.login({
-      success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-      }
-    })
+    
     // 获取用户信息
     wx.getSetting({
       success: res => {
@@ -88,11 +117,13 @@ App({
       }
     })
   },
+  
   globalData: {
     userInfo: [],
-    cate_id:1,
     user:[],
-    sms_random:"BVCXa1.4jdPPksMndkE3_oO0*",
+    token:"",
+    openid:'',
+    sms_key:'0f3c5b5bff12a5c8adbba5c17652eaf3',
   },
   onPageScroll: function (e) {
     if (e.scrollTop < 0) {

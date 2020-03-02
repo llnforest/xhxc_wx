@@ -1,0 +1,43 @@
+/* pages/user/login.wxss */
+/* pages/user/userinfoEdit.wxss */
+.order-item{
+  position: relative;
+  padding:20rpx 2.5% 20rpx 150rpx;
+  border-bottom: 1px solid #e3eaef;
+  box-shadow: 0 1px 2px 0 rgba(101,129,156,.08);
+  line-height:60rpx;
+  min-height:102rpx;
+}
+
+.item-name{
+  position:absolute;
+  left:0;
+  width:130rpx;
+  font-weight:700;
+  text-align:right;
+  color:#666;
+}
+.item-dec{
+  text-align:left;
+  height:60rpx;
+}
+.send-code{
+  width:300rpx;
+  height:102rpx;
+  position:absolute;
+  right:0;
+  text-align:center;
+  color:#fff;
+  top:0;
+  line-height:100rpx;
+}
+.short-input{
+  width:250rpx;
+}
+.unable-bg{
+  background:#9dca9d;
+}
+.logo-img{
+  width:500rpx;
+  margin:150rpx auto 100rpx;
+}

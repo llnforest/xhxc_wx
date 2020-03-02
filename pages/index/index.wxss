@@ -45,6 +45,8 @@ calendar{
   position:relative;
   padding:5rpx 0 5rpx 150rpx;
   line-height:40rpx;
+  min-height: 48rpx;
+
 }
 .item-left{
   position:absolute;
